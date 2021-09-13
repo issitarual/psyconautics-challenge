@@ -1,7 +1,3 @@
-export default function Favorities(){
-    return(
-        <>
-        kdkdk
-        </>
-    )
+export default function Favorities() {
+  return <>kdkdk</>;
 }

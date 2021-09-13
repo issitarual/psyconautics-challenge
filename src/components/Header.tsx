@@ -1,26 +1,30 @@
 import styled from "styled-components";
 import { useState } from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-export default function Header (prop: {setCharacter: Function}) {
+export default function Header(prop: { setCharacter: Function }) {
   let history = useHistory();
   const [search, setSearch] = useState("");
   return (
     <HeaderContainer>
-      <img src="https://gamehag.com//img/rewards/logo/psychonauts.png" alt="psychonauts" onClick={() => history.push("/")} />
+      <img
+        src="https://gamehag.com//img/rewards/logo/psychonauts.png"
+        alt="psychonauts"
+        onClick={() => history.push("/")}
+      />
       <input
         autoFocus
         type="text"
         placeholder="Procure por um personagem"
         value={search}
         onChange={(e) => {
-            setSearch(e.target.value);
-            prop.setCharacter(e.target.value);
+          setSearch(e.target.value);
+          prop.setCharacter(e.target.value);
         }}
       />
     </HeaderContainer>
   );
-};
+}
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -35,7 +39,7 @@ const HeaderContainer = styled.header`
   background-color: #011311;
   border-bottom: 2px solid #3b1a3a;
   box-shadow: 0 0 1em #3b1a3a;
-  img{
+  img {
     width: 300px;
     height: 100px;
     object-fit: cover;

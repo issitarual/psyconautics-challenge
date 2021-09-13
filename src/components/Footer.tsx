@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
-export default function Footer () {
-    let history = useHistory();
+export default function Footer() {
+  let history = useHistory();
   return (
     <FooterContainer>
       <Characters onClick={() => history.push("/")}>Personagens</Characters>
       <div>Meus Favoritos</div>
     </FooterContainer>
   );
-};
+}
 
 const FooterContainer = styled.footer`
   position: fixed;
@@ -35,5 +35,5 @@ const FooterContainer = styled.footer`
 `;
 
 const Characters = styled.div`
-    border-right: 3px solid #3b1a3a;
+  border-right: 3px solid #3b1a3a;
 `;
