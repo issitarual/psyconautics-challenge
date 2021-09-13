@@ -19,7 +19,6 @@ const FooterContainer = styled.footer`
   bottom: 0;
   left: 0;
   background-color: #011311;
-  border-top: 2px solid #3b1a3a;
   box-shadow: 0 0 1em #3b1a3a;
   div {
     width: 50%;

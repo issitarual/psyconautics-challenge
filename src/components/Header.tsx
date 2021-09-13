@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import logo from "../assets/psyconauts.webp"
 
-export default function Header () {
+export default function Header (prop: {setCharacter: Function}) {
   const [search, setSearch] = useState("");
   return (
     <HeaderContainer>
@@ -12,7 +11,10 @@ export default function Header () {
         type="text"
         placeholder="Procure por um personagem"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+            setSearch(e.target.value);
+            prop.setCharacter(e.target.value);
+        }}
       />
     </HeaderContainer>
   );

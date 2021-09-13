@@ -1,18 +1,18 @@
-import { /* Route,  */Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-/* import React from 'react';
-import logo from './logo.svg'; */
-import './App.css';
+import Characters from "./pages/characters";
+import {useState} from "react";
 
 function App(){
+  const [searchCharacter, serSearchCharacter] = useState("");
   return (
     <BrowserRouter>
     <GlobalStyles />
-     <Header /> 
+     <Header setCharacter={serSearchCharacter} /> 
     <Switch>
-{/*       <Route path="/" exact component={Characters} /> */}
+       <Route path="/" exact component={() => Characters({searchCharacter})} /> 
     </Switch>
      <Footer /> 
   </BrowserRouter>
