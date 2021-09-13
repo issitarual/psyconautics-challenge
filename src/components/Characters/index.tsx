@@ -6,7 +6,7 @@ export default function CharactersList(prop: {
 }) {
   console.log(prop.characters);
   return (
-    <CharactersContainer>
+    <CharactersContainer style={{justifyContent: prop.characters.length === 1? "center": "space-between"}}>
       {prop.characters.length === 0 ? (
         <NotFound>Nenhum personagem foi encontrado</NotFound>
       ) : (
@@ -23,7 +23,6 @@ const CharactersContainer = styled.main`
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
 `;
 
