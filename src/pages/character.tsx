@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterData from "../components/Character";
+import Loading from "../components/Loading";
 
 export default function Character() {
   const { name }: { name: string } = useParams();
@@ -18,6 +19,6 @@ export default function Character() {
   }, []);
   console.log(character);
   return (
-    <>{loading ? "carregando" : <CharacterData character={character} />}</>
+    <>{loading ? <Loading /> : <CharacterData character={character} />}</>
   );
 }
