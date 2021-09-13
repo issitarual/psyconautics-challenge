@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useState } from "react";
+import {useHistory} from "react-router-dom";
 
 export default function Header (prop: {setCharacter: Function}) {
+  let history = useHistory();
   const [search, setSearch] = useState("");
   return (
     <HeaderContainer>
-        <img src="https://gamehag.com//img/rewards/logo/psychonauts.png" />
+      <img src="https://gamehag.com//img/rewards/logo/psychonauts.png" alt="psychonauts" onClick={() => history.push("/")} />
       <input
         autoFocus
         type="text"
@@ -37,6 +39,7 @@ const HeaderContainer = styled.header`
     width: 300px;
     height: 100px;
     object-fit: cover;
+    cursor: pointer;
   }
   input {
     width: 95%;

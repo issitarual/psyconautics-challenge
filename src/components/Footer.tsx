@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { useHistory } from "react-router-dom"
 
 export default function Footer () {
+    let history = useHistory();
   return (
     <FooterContainer>
-      <Characters>Personagens</Characters>
+      <Characters onClick={() => history.push("/")}>Personagens</Characters>
       <div>Meus Favoritos</div>
     </FooterContainer>
   );

@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 export default function Character (prop: {character: {img: string, name: string}}){
+    let history = useHistory();
     const {img, name} = prop.character;
     return(
-        <CharacterContainer>
+        <CharacterContainer onClick={() => history.push(`/${name}`)}>
             <img src={img} alt={name} />
             <p>{name}</p>
         </CharacterContainer>
