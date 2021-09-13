@@ -23,11 +23,13 @@ export default function CharacterData(prop: { character: {} }) {
           </p>
           <p>
             <strong>PsyPowers</strong> <br />
-            {psiPowers.map((psypower, i) => (
-              <button key={i} onClick={() => setPower(i + 1)}>
-                {i + 1}
-              </button>
-            ))}
+            {psiPowers.length === 0
+              ? "Nenhum"
+              : psiPowers.map((psypower, i) => (
+                  <button key={i} onClick={() => setPower(i + 1)}>
+                    {i + 1}
+                  </button>
+                ))}
           </p>
           <button onClick={() => alert("favorito")}>Adicionar +</button>
         </div>
