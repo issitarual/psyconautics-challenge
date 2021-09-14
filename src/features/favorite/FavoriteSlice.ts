@@ -14,12 +14,13 @@ const favoriteCharacter = createSlice({
   initialState,
   reducers: {
     toDeleted(state, action) {
-      const { id } = action.payload;
+      const { name } = action.payload;
+      console.log(name);
       // Construct a new array immutably
-      const newTodos = state.filter((character) => character.id !== id);
+      const newFavorite = state.filter((character) => character.name !== name);
       // "Mutate" the existing state to save the new array
-      console.log(state);
-      return newTodos;
+      console.log(current(state));
+      return newFavorite
     },
     toAdd(state, action) {
       // Construct a new array immutably
