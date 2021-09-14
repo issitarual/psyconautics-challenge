@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CharactersList from "../components/Characters";
@@ -36,6 +35,5 @@ export default function Characters(prop: { searchCharacter: string }) {
   }
 
   const search = getCharacter(prop.searchCharacter, characters);
-  console.log(characters);
   return <>{loading ? <Loading /> : <CharactersList characters={search} />}</>;
 }

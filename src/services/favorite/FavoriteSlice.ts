@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Define a type for the slice state
 export interface FavoriteState {
@@ -15,18 +15,11 @@ const favoriteCharacter = createSlice({
   reducers: {
     toDeleted(state, action) {
       const { name } = action.payload;
-      console.log(name);
-      // Construct a new array immutably
       const newFavorite = state.filter((character) => character.name !== name);
-      // "Mutate" the existing state to save the new array
-      console.log(current(state));
       return newFavorite
     },
     toAdd(state, action) {
-      // Construct a new array immutably
       state.push(action.payload);
-      console.log(current(state));
-      // "Mutate" the existing state to save the new array
     },
   },
 });

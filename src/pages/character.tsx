@@ -13,11 +13,10 @@ export default function Character() {
       .get(`https://psychonauts-api.herokuapp.com/api/characters?name=${name}`)
       .then(({ data }) => {
         setCharacter(data);
-        setLoading(!loading);
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(character);
   return (
     <>{loading ? <Loading /> : <CharacterData character={character} />}</>
   );

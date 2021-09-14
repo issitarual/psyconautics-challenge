@@ -7,7 +7,7 @@ export default function Character(prop: {
   let history = useHistory();
   const { img, name } = prop.character;
   return (
-    <CharacterContainer onClick={() => history.push(`/${name}`)}>
+    <CharacterContainer onClick={() => history.push(`/character/${name}`)}>
       <img src={img} alt={name} />
       <p>{name}</p>
     </CharacterContainer>

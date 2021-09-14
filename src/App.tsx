@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Characters from "./pages/characters";
 import { useState } from "react";
 import Character from "./pages/character";
-import { ApiProvider } from '@reduxjs/toolkit/query/react';
+import Favorities from "./pages/favorities";
 
 function App() {
   const [searchCharacter, setSearchCharacter] = useState("");
@@ -19,7 +19,8 @@ function App() {
           exact
           component={() => Characters({ searchCharacter })}
         />
-        <Route path="/:name" exact component={Character} />
+        <Route path="/character/:name" exact component={Character} />
+        <Route path="/favorities" exact component={Favorities} />
       </Switch>
       <Footer />
     </BrowserRouter>

@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Header(prop: { setCharacter: Function }) {
   let history = useHistory();
+  let location = useLocation();
+  const showInput = location.pathname === "/";
   const [search, setSearch] = useState("");
   return (
     <HeaderContainer>
@@ -21,6 +24,7 @@ export default function Header(prop: { setCharacter: Function }) {
           setSearch(e.target.value);
           prop.setCharacter(e.target.value);
         }}
+        style={{ display: `${showInput ? "block" : "none"}` }}
       />
     </HeaderContainer>
   );

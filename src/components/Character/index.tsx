@@ -3,7 +3,7 @@ import { useState } from "react";
 import PsyPowers from "./PsyPower";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../app/store";
-import { toAdd, toDeleted } from "../../features/favorite/FavoriteSlice";
+import { toAdd, toDeleted } from "../../services/favorite/FavoriteSlice";
 
 export default function CharacterData(prop: { character: {} }) {
   const { gender, img, name, psiPowers, id } = prop.character as {
@@ -70,7 +70,7 @@ export default function CharacterData(prop: { character: {} }) {
 }
 
 const CharacterContainer = styled.main`
-  margin: 185px 20px 70px 20px;
+  margin: 150px 20px 70px 20px;
   display: flex;
   @media (max-width: 600px) {
     flex-direction: column;

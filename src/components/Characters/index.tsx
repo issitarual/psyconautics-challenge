@@ -1,12 +1,20 @@
 import styled from "styled-components";
 import Character from "./Character";
+import { useLocation } from "react-router-dom";
 
 export default function CharactersList(prop: {
   characters: { name: string; img: string }[] | never[];
 }) {
-  console.log(prop.characters);
+  let location = useLocation();
+  const showInput = location.pathname === "/";
   return (
-    <CharactersContainer style={{justifyContent: prop.characters.length === 1? "center": "space-between"}}>
+    <CharactersContainer
+      style={{
+        justifyContent:
+          prop.characters.length === 1 ? "center" : "space-between",
+        margin: showInput? "185px 20px 70px 20px": "150px 20px 70px 20px"
+      }}
+    >
       {prop.characters.length === 0 ? (
         <NotFound>Nenhum personagem foi encontrado</NotFound>
       ) : (
@@ -19,7 +27,6 @@ export default function CharactersList(prop: {
 }
 
 const CharactersContainer = styled.main`
-  margin: 185px 20px 70px 20px;
   color: white;
   display: flex;
   align-items: center;

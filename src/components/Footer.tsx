@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Characters onClick={() => history.push("/")}>Personagens</Characters>
-      <div>Meus Favoritos</div>
+      <div onClick={() => history.push("/favorities")}>Meus Favoritos</div>
     </FooterContainer>
   );
 }
