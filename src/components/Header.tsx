@@ -38,7 +38,6 @@ const HeaderContainer = styled.header`
   left: 0;
   background-color: #011311;
   border-bottom: 2px solid #3b1a3a;
-  box-shadow: 0 0 1em #3b1a3a;
   img {
     width: 300px;
     height: 100px;

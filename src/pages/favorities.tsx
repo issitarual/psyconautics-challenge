@@ -1,3 +1,7 @@
 export default function Favorities() {
-  return <>kdkdk</>;
+  return (
+    <>
+      <button>cliquei</button>
+    </>
+  );
 }

@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Characters from "./pages/characters";
 import { useState } from "react";
 import Character from "./pages/character";
+import { ApiProvider } from '@reduxjs/toolkit/query/react';
 
 function App() {
   const [searchCharacter, setSearchCharacter] = useState("");

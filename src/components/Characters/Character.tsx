@@ -29,7 +29,7 @@ const CharacterContainer = styled.div`
     width: calc(50% - 15px);
   }
   &:hover {
-    background-color: #011412;
+    box-shadow: 0 0 1em #36a376;
   }
   img {
     width: 90%;

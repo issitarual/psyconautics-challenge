@@ -40,7 +40,6 @@ const PsyPowerCOntainer = styled.div`
     border: 1px solid #adbac7;
     border-radius: 5px;
     background-color: #292e35;
-    width: 80%;
   }
   h2 {
     font-weight: bold;
@@ -49,6 +48,7 @@ const PsyPowerCOntainer = styled.div`
   span {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 15px;
   }
   img {

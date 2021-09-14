@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import favoriteCharacter from '../features/favorite/FavoriteSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    favoties: favoriteCharacter
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

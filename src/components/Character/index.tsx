@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
 import PsyPowers from "./PsyPower";
+import { useSelector, useDispatch } from "react-redux";
+import { toAdd, toDeleted } from "../../features/favorite/FavoriteSlice";
 
 export default function CharacterData(prop: { character: {} }) {
-  const { gender, img, name, psiPowers } = prop.character as {
+  const { gender, img, name, psiPowers, id } = prop.character as {
+    id: number;
     gender: string;
     img: string;
     name: string;
@@ -11,6 +14,13 @@ export default function CharacterData(prop: { character: {} }) {
   };
 
   const [power, setPower] = useState(0);
+  const dispatch = useDispatch();
+  const addCharacter = (
+    character: { name: string; id: number; img: string }
+  ) => {
+    dispatch(toAdd(prop.character));
+  };
+  const remove = useSelector(toDeleted);
   return (
     <>
       <CharacterContainer>
@@ -31,7 +41,7 @@ export default function CharacterData(prop: { character: {} }) {
                   </button>
                 ))}
           </p>
-          <button onClick={() => alert("favorito")}>Adicionar +</button>
+          <button onClick={() => addCharacter({name, img, id})}>Adicionar +</button>
         </div>
       </CharacterContainer>
       {power ? (
