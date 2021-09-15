@@ -1,11 +1,13 @@
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { useState } from "react";
+
 import GlobalStyles from "./styles/GlobalStyles";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Characters from "./pages/characters";
-import { useState } from "react";
-import Character from "./pages/character";
-import Favorities from "./pages/favorities";
+import Character from "./pages/Character";
+import Favorities from "./pages/Favorities";
+import Home from "./pages/Home";
 
 function App() {
   const [searchCharacter, setSearchCharacter] = useState("");
@@ -14,11 +16,7 @@ function App() {
       <GlobalStyles />
       <Header setCharacter={setSearchCharacter} />
       <Switch>
-        <Route
-          path="/"
-          exact
-          component={() => Characters({ searchCharacter })}
-        />
+        <Route path="/" exact component={() => Home({ searchCharacter })} />
         <Route path="/character/:name" exact component={Character} />
         <Route path="/favorities" exact component={Favorities} />
       </Switch>

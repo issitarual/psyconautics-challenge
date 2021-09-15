@@ -6,8 +6,8 @@ import { RootState } from "../../app/store";
 import { toAdd, toDeleted } from "../../services/favorite/FavoriteSlice";
 
 export default function CharacterData(prop: { character: {} }) {
-  const { gender, img, name, psiPowers, id } = prop.character as {
-    id: number;
+  const { gender, img, name, psiPowers, _id } = prop.character as {
+    _id: number;
     gender: string;
     img: string;
     name: string;
@@ -18,14 +18,14 @@ export default function CharacterData(prop: { character: {} }) {
   const dispatch = useDispatch();
   const addCharacter = (character: {
     name: string;
-    id: number;
+    _id: number;
     img: string;
   }) => {
     dispatch(toAdd(prop.character));
   };
   const removeCharacter = (character: {
     name: string;
-    id: number;
+    _id: number;
     img: string;
   }) => {
     dispatch(toDeleted(prop.character));
@@ -52,11 +52,11 @@ export default function CharacterData(prop: { character: {} }) {
                 ))}
           </p>
           {favorities.find((favorite) => favorite.name === name) ? (
-            <button onClick={() => removeCharacter({ name, img, id })}>
+            <button onClick={() => removeCharacter({ name, img, _id })}>
               Remover
             </button>
           ) : (
-            <button onClick={() => addCharacter({ name, img, id })}>
+            <button onClick={() => addCharacter({ name, img, _id })}>
               Adicionar
             </button>
           )}

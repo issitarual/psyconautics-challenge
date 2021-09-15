@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CharactersList from "../components/Characters";
+import CharactersList from "../components/CharactersList";
 import Loading from "../components/Loading";
 
-export default function Characters(prop: { searchCharacter: string }) {
+export default function Home(prop: { searchCharacter: string }) {
   const [characters, setCarachters] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
